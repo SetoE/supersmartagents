@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource(
+Route::middleware('testApiToken')->apiResource(
     'page-contents',
     \App\Http\Controllers\api\PageContentController::class
 );
